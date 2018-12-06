@@ -386,10 +386,13 @@ std::vector<float> keras::KerasModel::compute_output(keras::DataChunk *dc) {
     //cout << "Processing layer " << m_layers[l]->get_name() << endl;
     out = m_layers[l]->compute_output(inp);
 
-    //cout << "Input" << endl;
-    //inp->show_name();
-    //cout << "Output" << endl;
-    //out->show_name();
+    //
+
+    cout << "Input" << endl;
+    inp->show_name();
+    cout << "Output" << endl;
+    out->show_name();
+    out->show_values();
     if(inp != dc) delete inp;
     //delete inp;
     inp = 0L;

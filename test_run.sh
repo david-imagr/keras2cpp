@@ -38,5 +38,5 @@ rm $DATA_SAMPLE
 rm $KERAS_OUTPUT
 rm $KERAS2CPP_OUTPUT
 rm $TEST_BIN
-# used only if you log hidden layers output in test_run_cnn.py file
-#rm test_layer_*.output
+#used only if you log hidden layers output in test_run_cnn.py file
+rm test_layer_*.output

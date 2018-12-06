@@ -29,12 +29,14 @@ if len(keras_output) != len(keras2cpp_output):
 
 sub = np.sum(np.abs(keras_output - keras2cpp_output))
 
-if sub < 1e-6:
+if sub < 1e-4:
     print 'Test: [DONE]'
     print 'Dump is working correctly.'
     sys.exit(0)
 else:
     print 'Test: [ERROR]'
     print 'The output from Keras and Keras2cpp are different.'
+    print('keras value:{} '.format(keras_output))
+    print('keras CPP value:{} '.format(keras2cpp_output))
     print 'Difference value:', sub
     sys.exit(1)

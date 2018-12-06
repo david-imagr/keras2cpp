@@ -60,7 +60,8 @@ with open(args.output, 'w') as fout:
             Need to transpose weights for CONV2D
             '''
 
-            W = np.transpose(W)
+            W = np.transpose(W,axes=(3,2,0,1))
+            print(W)
 
 
             

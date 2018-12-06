@@ -61,7 +61,7 @@ with open(args.data_sample, "w") as fin:
         fin.write(str(b)+'\n')
 
 # Get layers output (for debuging)
-'''
+
 for l in xrange(len(model.layers)):
     with open('test_layer_' + str(l) + '.output', 'w') as fout:
 
@@ -74,7 +74,7 @@ for l in xrange(len(model.layers)):
             print layer_output
         fout.write(str(layer_output[0].shape) + '\n')
         fout.write(str(layer_output) + '\n')
-'''
+
 #print 'input?'
 #get_layer_output = K.function([model.layers[0].input, K.learning_phase()],
 #                              [model.layers[0].input])
