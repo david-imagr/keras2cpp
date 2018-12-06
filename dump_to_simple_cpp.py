@@ -20,7 +20,18 @@ print 'Writing to', args.output
 arch = open(args.architecture).read()
 model = model_from_json(arch)
 model.load_weights(args.weights)
+from keras import backend as K
+from keras.utils.conv_utils import convert_kernel
+
+
+
 model.compile(loss='categorical_crossentropy', optimizer='adadelta')
+
+
+
+
+
+
 arch = json.loads(arch)
 
 with open(args.output, 'w') as fout:
@@ -41,8 +52,20 @@ with open(args.output, 'w') as fout:
             #if 'batch_input_shape' in l['config']:
             #    fout.write(str(l['config']['batch_input_shape'][1]) + ' ' + str(l['config']['batch_input_shape'][2]) + ' ' + str(l['config']['batch_input_shape'][3]))
             #fout.write('\n')
+      
+
 
             W = model.layers[ind].get_weights()[0]
+            '''
+            Need to transpose weights for CONV2D
+            '''
+
+            W = np.transpose(W)
+
+
+            
+            
+
             if args.verbose:
                 print W.shape
             fout.write(str(W.shape[0]) + ' ' + str(W.shape[1]) + ' ' + str(W.shape[2]) + ' ' + str(W.shape[3]) + ' ' + l['config']['border_mode'] + '\n')
