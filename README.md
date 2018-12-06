@@ -4,6 +4,21 @@ This is a bunch of code to port Keras neural network model into pure C++. Neural
 
 It is working with the Theano backend - support for Tensorflow will be added soon.
 
+
+## Updated support for tf models 12/6/18
+This repo now supports tf model by transposing weights from `tf` to `theano`.
+Install `theano`  `pip install theano`. Make changes to `keras.json`
+
+```
+{
+    "epsilon": 1e-07,
+    "floatx": "float32",
+    "image_data_format": "channels_last",
+    "backend": "theano"
+}
+```
+Test by running ` sudo ./test_run.sh` . 
+
 ## Usage
 
  1. Save your network weights and architecture.
