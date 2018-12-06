@@ -7,7 +7,7 @@ It is working with the Theano backend - support for Tensorflow will be added soo
 
 ## Updated support for tf models 12/6/18
 This repo now supports tf model by transposing weights from `tf` to `theano`.
-Install `theano`  `pip install theano`. Make changes to `keras.json`
+Install `theano`,  `pip install theano`. Make changes to `keras.json` located `$HOME/.keras/keras.json`
 
 ```
 {
